@@ -157,7 +157,7 @@ df['avg_spend_per_purchase'] = df['annual_income'] / df['purchase_frequency']
                     fig2 = px.scatter(df, x='monthly_sales', y='profit', color='product', title="Sales vs Profit")
                     st.plotly_chart(fig2, use_container_width=True)
         else:
-            st.warning("Required visualization columns (`product`, `monthly_sales`, `profit`) are missing.")
+            st.warning("Required visualization columns (product, monthly_sales, profit) are missing.")
 
     # ==========================================
     # SECTION 6: Business Data Analysis (Declining Sales)
@@ -166,11 +166,11 @@ df['avg_spend_per_purchase'] = df['annual_income'] / df['purchase_frequency']
         st.subheader("📌 [Section 6] Business Analyst: Declining Sales Investigation")
         st.markdown("""
         **1. Possible Reasons for Declining Sales:**
-        * Reduction in marketing spend (`marketing_spend`) leading to lower website traffic (`website_visits`).
+        * Reduction in marketing spend leading to lower website traffic.
         * Increased market competition or drop in product quality.
         
         **2. Confirming Analyses:**
-        * Run a Correlation Matrix between `marketing_spend` and `sales`.
+        * Run a Correlation Matrix between marketing spend and sales.
         
         **3. Data-Driven Business Actions:**
         * Reallocate marketing budgets to channels with higher Return on Investment (ROI).
@@ -180,4 +180,4 @@ df['avg_spend_per_purchase'] = df['annual_income'] / df['purchase_frequency']
             fig_trend = px.line(df.reset_index(), x='index', y=['monthly_sales', 'marketing_spend'], title="Sales & Marketing Spend Trend")
             st.plotly_chart(fig_trend, use_container_width=True)
         else:
-            st.info("Columns for Business Analysis trend
+            st.info("Columns for Business Analysis trend are missing.")
